@@ -18,7 +18,7 @@ class CreateBlogsTable extends Migration
             $table->string('title');
             $table->string('subtitle')->nullable();
             $table->longText('description');
-            $table->text('status')->default('1');
+            $table->tinyInteger('status')->default('1');
             $table->string('image')->nullable()->default('dummy.jpg');
             $table->timestamps();
         });
