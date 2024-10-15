@@ -1,0 +1,29 @@
+version: '3.8'
+
+services:
+  app:
+    build:
+      context: .
+    image: laravel-app
+    container_name: laravel-app
+    restart: unless-stopped
+    working_dir: /var/www/html
+    volumes:
+      - .:/var/www/html
+    environment:
+      - PHP_OPCACHE_VALIDATE_TIMESTAMPS=1 # Disable opcache for development
+      - APP_ENV=local
+      - APP_DEBUG=true
+      - APP_URL=http://localhost
+
+  web:
+    image: nginx:alpine
+    container_name: laravel-nginx
+    restart: unless-stopped
+    ports:
+      - "8089:80"
+    volumes:
+      - .:/var/www/html
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - app
