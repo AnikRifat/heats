@@ -52,6 +52,21 @@ services:
       timeout: 10s
       retries: 5
 
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    container_name: phpmyadmin
+    restart: unless-stopped
+    environment:
+      PMA_HOST: db  # Host of the MySQL service
+      MYSQL_ROOT_PASSWORD: secret  # Root password of the MySQL service
+    ports:
+      - "8081:80"  # Expose phpMyAdmin on port 8081
+    depends_on:
+      db:
+        condition: service_healthy  # Ensure db service is healthy before starting phpMyAdmin
+    networks:
+      - laravel-network
+
 volumes:
   dbdata:
 
