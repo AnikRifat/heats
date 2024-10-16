@@ -44,7 +44,7 @@
                                                 name="website_phone" value="{{ $content->website_phone }}" required>
                                         </div>
                                         <div class="col-md-6">
-                                            <label for="website_address" class="form-label">Website name</label>
+                                            <label for="website_address" class="form-label">Website Address</label>
                                             <textarea type="address" class="form-control" id="website_address" name="website_address" required>{{ $content->website_address }}</textarea>
                                         </div>
 

@@ -50,7 +50,7 @@
                                         <th>status</th>
                                         <th>Order</th>
                                         <th>Category</th>
-                                        <th>Sub Category</th>
+                                        {{-- <th>Sub Category</th> --}}
                                         <th>Title</th>
                                         <th>Description</th>
                                         <th>Image</th>
@@ -72,7 +72,7 @@
                                         <td>{{ $product->order }}</td>
 
                                         <td>{{ $product->category?->title }}</td>
-                                        <td>{{ $product->subcategory?->title }}</td>
+                                        {{-- <td>{{ $product->subcategory?->title }}</td> --}}
                                         <td>{{ $product->title }}</td>
                                         <td>{!! $product->description !!}</td>
                                         <td>

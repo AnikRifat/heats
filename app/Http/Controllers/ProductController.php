@@ -46,12 +46,11 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
-        //  dd($request->all());
         $data = $request->validate([
             'title' => 'required',
             'description' => 'required',
             'product_category' => 'required',
-            'product_sub_category' => 'nullable',
+            'product_sub_category' => 'sometimes',
             'image' => 'required|image|max:2048', // max file size of 2MB
         ]);
         $image = $request->file('image');

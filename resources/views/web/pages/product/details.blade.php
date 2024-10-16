@@ -26,7 +26,7 @@
                     </div>
                     <!--thumb image code end-->
 
-                    <!--Product detail code start-->
+                    <!--Service detail code start-->
                     <div class="col-sm-8 col-md-8 col-lg-8 col-xs-12">
                         <h5><span>{{ $product->title }}</span></h5>
 

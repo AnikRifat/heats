@@ -35,7 +35,7 @@
                             </li>
 
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('product.index') }}">Products</a>
+                                <a class="nav-link" href="{{ route('product.index') }}">Services</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="{{ route('about') }}">About us</a>
@@ -100,7 +100,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
-                    <p>© Copyright {{ date('Y') }}, <span>HEATS </span> All Rights Reserved.</p>
+                    <p>© Copyright {{ date('Y') }}, <span>Happy Double Glazing Solution </span> All Rights Reserved.</p>
                 </div>
                 <div class="col-sm-12 col-md-12 col-lg-12 col-xs-12 text-center">
                     <ul class="list-inline">
@@ -119,16 +119,7 @@
                                   title="card">
                             </a>
                         </li>
-                        <li> <a href="{{ $content->linkdin }}">
-                                <img src="{{ asset('') }}assets/web/icon/linkedin.png" class="img-fluid" alt="card"
-                                  title="card">
-                            </a>
-                        </li>
-                        <li> <a href="{{ $content->skype }}">
-                                <img src="{{ asset('') }}assets/web/icon/skype.png" class="img-fluid" alt="card"
-                                  title="card">
-                            </a>
-                        </li>
+
                     </ul>
                 </div>
             </div>

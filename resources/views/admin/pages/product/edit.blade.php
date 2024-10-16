@@ -60,14 +60,14 @@
 
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    {{-- <div class="col-md-6">
                                         <label for="product_sub_category" class="form-label">Product Sub Category :</label>
                                         <select id="product_sub_category" name="product_sub_category" class="form-select">
 
 
 
                                         </select>
-                                    </div>
+                                    </div> --}}
                                     <div class="col-md-6">
                                         <label for="description" class="form-label">Description</label>
                                         <textarea class="form-control" id="summernote" name="description" rows="10">

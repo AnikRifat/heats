@@ -26,7 +26,7 @@
                     <i class="icon_star_alt"></i>
                     <i class="icon_star_alt"></i>
                 </h4>
-       
+
             </div>
 
         </div>
@@ -56,7 +56,8 @@
     </div>
 </div>
 <div class="map">
+
     <iframe
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3648.576728425693!2d90.38286427528378!3d23.869159578589496!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c41a98002459%3A0xddd1a4f2cc9f9ea6!2s1230%20Gausul%20Azam%20Ave%2C%20Dhaka%201230!5e0!3m2!1sen!2sbd!4v1692684587754!5m2!1sen!2sbd"></iframe>
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d228.10963419996773!2d90.42114801472312!3d23.82733997431353!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3755c76fea37ad9f%3A0x85832c78160d81ed!2sHappy%20Double%20Glazing%20Solution!5e0!3m2!1sbn!2sbd!4v1729097625307!5m2!1sbn!2sbd"></iframe>
 </div>
 @endsection

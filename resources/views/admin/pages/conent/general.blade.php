@@ -56,7 +56,7 @@
                                           data-default-file="{{ asset('uploads/content/' . $content->website_favicon) }}">
                                     </div>
 
-                        
+
 
                                 </div>
                                 <div class="row g-3">
@@ -65,21 +65,13 @@
                                         <input type="text" class="form-control" id="facebook" name="facebook"
                                           value="{{ $content->facebook }}" required>
                                     </div>
-                                    <div class="col-md-6">
-                                        <label for="linkdin" class="form-label">Linkdin</label>
-                                        <input type="text" class="form-control" id="linkdin" name="linkdin"
-                                          value="{{ $content->linkdin }}" required>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <label for="skype" class="form-label">Skype</label>
-                                        <input type="text" class="form-control" id="skype" name="skype"
-                                          value="{{ $content->skype }}" required>
-                                    </div>
+
                                     <div class="col-md-6">
                                         <label for="youtube" class="form-label">Youtube</label>
-                                        <textarea type="text" class="form-control" id="youtube" name="youtube"
-                                          required>{{ $content->youtube }}</textarea>
+                                        <input type="text" class="form-control" id="youtube" name="youtube"
+                                          value="{{ $content->youtube }}" required>
                                     </div>
+
                                     <div class="col-md-6">
                                         <label for="whatsapp" class="form-label">whatsapp</label>
                                         <textarea type="text" class="form-control" id="whatsapp" name="whatsapp"

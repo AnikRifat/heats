@@ -18,10 +18,8 @@ class Content extends Model
         'about_content',
         'about_image',
         'facebook',
-        'linkdin',
         'whatsapp',
         'youtube',
-        'skype',
 
     ];
 }

@@ -3,27 +3,58 @@ version: '3.8'
 services:
   app:
     build:
-      context: .
-    image: laravel-app
-    container_name: laravel-app
-    restart: unless-stopped
-    working_dir: /var/www/html
+      context: .  # Build from the Dockerfile in the current directory
+      dockerfile: Dockerfile  # Specify the Dockerfile if named differently
+    container_name: laravel_app
     volumes:
-      - .:/var/www/html
-    environment:
-      - PHP_OPCACHE_VALIDATE_TIMESTAMPS=1 # Disable opcache for development
-      - APP_ENV=local
-      - APP_DEBUG=true
-      - APP_URL=http://localhost
-
-  web:
-    image: nginx:alpine
-    container_name: laravel-nginx
-    restart: unless-stopped
+      - ./:/var/www/html
+      - ./laravel.conf:/etc/apache2/sites-available/000-default.conf
     ports:
-      - "8089:80"
-    volumes:
-      - .:/var/www/html
-      - ./nginx.conf:/etc/nginx/nginx.conf
+      - "8090:80"
+    working_dir: /var/www/html
+    environment:
+      - APACHE_DOCUMENT_ROOT=/
+      - DB_CONNECTION=mysql
+      - DB_HOST=db
+      - DB_PORT=3306  # Use the default MySQL port
+      - DB_DATABASE=laravel
+      - DB_USERNAME=user
+      - DB_PASSWORD=password
     depends_on:
-      - app
+      db:
+        condition: service_healthy  # Ensure db service is healthy before starting app
+    networks:
+      - laravel-network
+    healthcheck:  # Health check for the app service
+      test: ["CMD", "curl", "-f", "http://localhost/"]  # Replace with your application's health check URL
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+  db:
+    image: mysql:5.7  # Use specific version of MySQL
+    container_name: mysql_db
+    restart: unless-stopped
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: laravel
+      MYSQL_USER: user
+      MYSQL_PASSWORD: password
+    volumes:
+      - dbdata:/var/lib/mysql
+    ports:
+      - "3308:3306"
+    networks:
+      - laravel-network
+    healthcheck:  # Health check for the MySQL service
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "user", "-ppassword"]
+      interval: 30s
+      timeout: 10s
+      retries: 5
+
+volumes:
+  dbdata:
+
+networks:
+  laravel-network:
+    driver: bridge

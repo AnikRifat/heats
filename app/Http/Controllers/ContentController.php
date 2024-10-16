@@ -123,12 +123,9 @@ class ContentController extends Controller
             'website_name' => 'required',
             'website_description' => 'required',
             'facebook'=> 'required',
-        'linkdin'=> 'required',
         'whatsapp'=> 'required',
         'youtube'=> 'required',
-        'skype'=> 'required',
         ]);
-
         if ($request->hasFile('website_logo')) {
             $image = $request->file('website_logo');
             $imageName = time() . '.' . $image->extension();
@@ -153,11 +150,9 @@ class ContentController extends Controller
 
         $content->website_name = $validatedData['website_name'];
         $content->website_description = $validatedData['website_description'];
-        // $content->facebook = $validatedData['facebook'];
-        // $content->linkdin = $validatedData['linkdin'];
-        // $content->whatsapp = $validatedData['whatsapp'];
-        // $content->youtube = $validatedData['youtube'];
-        // $content->skype = $validatedData['skype'];
+        $content->facebook = $validatedData['facebook'];
+        $content->whatsapp = $validatedData['whatsapp'];
+        $content->youtube = $validatedData['youtube'];
 
         $content->save();
 

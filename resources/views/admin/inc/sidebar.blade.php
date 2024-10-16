@@ -68,7 +68,7 @@
 
 
         {{-- subcategory --}}
-        <li>
+        {{-- <li>
             <a href="javascript: void(0);" class="has-arrow waves-effect">
                 <i class="bx bx-home-circle"></i>
                 <span key="t-subcategory">SubCategory</span>
@@ -78,7 +78,7 @@
                 <li><a href="{{ route('subcategories.create') }}" key="t-create">Create SubCategory</a></li>
 
             </ul>
-        </li>
+        </li> --}}
         {{-- End - subcategory --}}
 
 
@@ -99,7 +99,7 @@
 
 
     {{-- start - blog --}}
-    {{-- <li>
+    <li>
         <a href="javascript: void(0);" class="has-arrow waves-effect">
             <i class="bx bx-home-circle"></i>
             <span key="t-blog">Blog</span>
@@ -109,7 +109,7 @@
     <li><a href="{{ route('blogs.create') }}" key="t-create">Create Blog</a></li>
 
     </ul>
-    </li> --}}
+    </li>
     {{-- End - blog --}}
 
     <li>

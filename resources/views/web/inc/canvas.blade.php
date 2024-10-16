@@ -25,7 +25,7 @@
             <li class="list-gap">
                 <a href="$about-us"> About Us</a>
             </li>
-            <li class="list-gap"><a href="#products">Products</a></li>
+            <li class="list-gap"><a href="#products">Services</a></li>
             <li class="list-gap"><a href="#blogs">Blogs</a></li>
             <li class="list-gap"><a href="{{ route('contact') }}">Contact</a></li>
         </ul>
